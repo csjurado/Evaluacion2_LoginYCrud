@@ -6,10 +6,11 @@ import java.sql.*;
 
 public class login extends JDialog{
     private JTextField emailTF;
-    private JTextField passwordTF;
+    private JPasswordField passwordTF;
     private JButton okBTN;
     private JPanel loginpanel;
     private JButton cancelButton;
+    private JButton recordarBTN;
 
 
     public login(JFrame parent) {
@@ -21,7 +22,6 @@ public class login extends JDialog{
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setDefaultLookAndFeelDecorated(true);
-
         okBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,6 +38,7 @@ public class login extends JDialog{
             }
         });
 
+
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,8 +46,17 @@ public class login extends JDialog{
                 dispose();;
             }
         });
+        recordarBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ImageIcon icono = new ImageIcon("src/images/user.png");
+                JOptionPane.showMessageDialog(null, "El usuario es : csjurado@epn.edu.ec \n El password es : 852046 ",
+                        "AYUDA PARA INGRESAR ", JOptionPane.PLAIN_MESSAGE, icono);
+            }
+        });
         setVisible(true);
     }
+
     public User user;
     private User getAuthenticationUser(String email,String password){
         User user = null;
@@ -86,12 +96,22 @@ public class login extends JDialog{
         User user = loginForm.user;
 
         if(user!=null){
-            System.out.println("Atenticacion correcta:"+user.nombre);
+
+            ImageIcon icono = new ImageIcon("src/images/user.png");
+            JOptionPane.showMessageDialog(null, "Atenticacion correcta :+user.nombre \n email : +user.email  celular : +user.celular \n direccion : +user.direccion \n password : +user.password",
+                "Mi titulo", JOptionPane.INFORMATION_MESSAGE, icono);
+
+
+            /*
+             System.out.println("Atenticacion correcta:"+user.nombre);
             System.out.println("email: "+user.email);
             System.out.println("celular: "+user.celular);
             System.out.println("direccion : "+user.direccion);
             System.out.println("password : "+user.password);
+             */
+
         }else{
+
             System.out.println("Autenticacion fallida");
         }
     }
