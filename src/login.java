@@ -33,7 +33,8 @@ public class login extends JDialog{
                 if(user!= null){
                     dispose();
                 }else {
-                    JOptionPane.showMessageDialog(login.this,"email o password incorrectos","Intente Nuevamente",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(login.this,"Email o Password incorrectos","ERROR",JOptionPane.ERROR_MESSAGE);
+                    Limpiar();
                 }
             }
         });
@@ -97,23 +98,21 @@ public class login extends JDialog{
 
         if(user!=null){
 
-            ImageIcon icono = new ImageIcon("src/images/user.png");
-            JOptionPane.showMessageDialog(null, "Atenticacion correcta :+user.nombre \n email : +user.email  celular : +user.celular \n direccion : +user.direccion \n password : +user.password",
-                "Mi titulo", JOptionPane.INFORMATION_MESSAGE, icono);
+            ImageIcon usuarioimg = new ImageIcon("src/images/user.png");
+            JOptionPane.showMessageDialog(null, "Atenticacion correcta :"+user.nombre +"\n Email : "+user.email+"\n Celular : "+user.celular +"\n Direccion : "+user.direccion +"\n Password : "+user.password,
+                "ACCESO PERMITIDO", JOptionPane.INFORMATION_MESSAGE, usuarioimg);
 
 
-            /*
-             System.out.println("Atenticacion correcta:"+user.nombre);
-            System.out.println("email: "+user.email);
-            System.out.println("celular: "+user.celular);
-            System.out.println("direccion : "+user.direccion);
-            System.out.println("password : "+user.password);
-             */
+
 
         }else{
 
             System.out.println("Autenticacion fallida");
         }
+    }
+    public void Limpiar(){
+        emailTF.setText("");
+        passwordTF.setText("");
     }
 }
 
