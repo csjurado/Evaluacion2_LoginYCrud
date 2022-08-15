@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7404ea6f-c833-4f87-953d-0cbea05c859b" name="Changes" comment="Login listo y funcionando Java Crud listo falta base de datos e interfaz">
-      <change afterPath="$PROJECT_DIR$/src/images/banck.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/clean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/create.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/update.png" afterDir="false" />
+    <list default="true" id="7404ea6f-c833-4f87-953d-0cbea05c859b" name="Changes" comment="Login listo y funcionando Java Crud listo , base de datos importadad y su interfaz terminada al 100%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaCrud.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaCrud.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaCrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +30,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Carlos Jurado/Documents/Repositorios Clonados/JavaCrudCompleto",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Carlos Jurado/Documents/Repositorios Clonados/JavaCrudCompleto&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.login">
     <configuration name="JavaCrud" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaCrud" />
@@ -107,7 +97,9 @@
       <workItem from="1660507982185" duration="1091000" />
       <workItem from="1660509100729" duration="5667000" />
       <workItem from="1660516776055" duration="1401000" />
-      <workItem from="1660518259735" duration="6092000" />
+      <workItem from="1660518259735" duration="6125000" />
+      <workItem from="1660527082203" duration="7000" />
+      <workItem from="1660527109472" duration="411000" />
     </task>
     <task id="LOCAL-00001" summary="proyect created">
       <created>1660502721058</created>
@@ -144,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660521929156</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Login listo y funcionando Java Crud listo , base de datos importadad y su interfaz terminada al 100%">
+      <created>1660526453616</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660526453616</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +167,7 @@
     <MESSAGE value="Login funcionando al 100, falta acceder al inventario" />
     <MESSAGE value="Login funcionando al 100, falta acceder al inventario, listo se anadio la funcion limpiar" />
     <MESSAGE value="Login listo y funcionando Java Crud listo falta base de datos e interfaz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login listo y funcionando Java Crud listo falta base de datos e interfaz" />
+    <MESSAGE value="Login listo y funcionando Java Crud listo , base de datos importadad y su interfaz terminada al 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login listo y funcionando Java Crud listo , base de datos importadad y su interfaz terminada al 100%" />
   </component>
 </project>
