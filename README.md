@@ -6,6 +6,6 @@ R: Read   (Leer - Buscar Usuario)
 U: Update (Actualizar Usuario)
 D: Delete (Borrar Usuario)
 
-> _La base de datos fue importada y generada de la pagina _  https://generatedata.com/
+> _La base de datos fue importada y generada de la pagina_   https://generatedata.com/
 
 #### Autor: Carlos Jurado P.O.O. :+1:
