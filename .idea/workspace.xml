@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7404ea6f-c833-4f87-953d-0cbea05c859b" name="Changes" comment="Login funcionando al 100, falta acceder al inventario">
+    <list default="true" id="7404ea6f-c833-4f87-953d-0cbea05c859b" name="Changes" comment="Login funcionando al 100, falta acceder al inventario, listo se anadio la funcion limpiar">
+      <change afterPath="$PROJECT_DIR$/src/JavaCrud.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JavaCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons8-login-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/icons8-login-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,19 +35,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Carlos Jurado/Documents/Repositorios Clonados/Evaluacion2_LoginYCrud&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Carlos Jurado/Documents/Repositorios Clonados/JavaCrudCompleto",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.login">
+    <configuration name="JavaCrud" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaCrud" />
+      <module name="Evaluacion2_LoginYCrud" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="crud" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="crud" />
+      <module name="Evaluacion2_LoginYCrud" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="javaCrud" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="javaCrud" />
+      <module name="Evaluacion2_LoginYCrud" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="login" />
       <module name="Evaluacion2_LoginYCrud" />
@@ -53,6 +81,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.login" />
+        <item itemvalue="Application.JavaCrud" />
+        <item itemvalue="Application.crud" />
+        <item itemvalue="Application.javaCrud" />
       </list>
     </recent_temporary>
   </component>
@@ -68,7 +99,9 @@
       <workItem from="1660503015389" duration="626000" />
       <workItem from="1660504073738" duration="3106000" />
       <workItem from="1660507982185" duration="1091000" />
-      <workItem from="1660509100729" duration="1688000" />
+      <workItem from="1660509100729" duration="5667000" />
+      <workItem from="1660516776055" duration="1401000" />
+      <workItem from="1660518259735" duration="1545000" />
     </task>
     <task id="LOCAL-00001" summary="proyect created">
       <created>1660502721058</created>
@@ -91,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660510582158</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Login funcionando al 100, falta acceder al inventario, listo se anadio la funcion limpiar">
+      <created>1660511111448</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660511111448</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +153,7 @@
     <MESSAGE value="proyect created" />
     <MESSAGE value="Login listo falta el error del password, donde no debe ser visible" />
     <MESSAGE value="Login funcionando al 100, falta acceder al inventario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login funcionando al 100, falta acceder al inventario" />
+    <MESSAGE value="Login funcionando al 100, falta acceder al inventario, listo se anadio la funcion limpiar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login funcionando al 100, falta acceder al inventario, listo se anadio la funcion limpiar" />
   </component>
 </project>

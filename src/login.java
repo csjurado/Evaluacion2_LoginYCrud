@@ -11,6 +11,7 @@ public class login extends JDialog{
     private JPanel loginpanel;
     private JButton cancelButton;
     private JButton recordarBTN;
+    private JPanel crud;
 
 
     public login(JFrame parent) {
@@ -31,6 +32,13 @@ public class login extends JDialog{
 
                 user = getAuthenticationUser(email,password);
                 if(user!= null){
+
+                    JFrame crud1 = new JFrame("JAVA CRUD");
+                    crud1.setContentPane(new JavaCrud().Main);
+                    crud1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    crud1.pack();
+                    crud1.setVisible(true);
+
                     dispose();
                 }else {
                     JOptionPane.showMessageDialog(login.this,"Email o Password incorrectos","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -44,7 +52,7 @@ public class login extends JDialog{
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Boton Cancel");
-                dispose();;
+                dispose();
             }
         });
         recordarBTN.addActionListener(new ActionListener() {
@@ -101,9 +109,6 @@ public class login extends JDialog{
             ImageIcon usuarioimg = new ImageIcon("src/images/user.png");
             JOptionPane.showMessageDialog(null, "Atenticacion correcta :"+user.nombre +"\n Email : "+user.email+"\n Celular : "+user.celular +"\n Direccion : "+user.direccion +"\n Password : "+user.password,
                 "ACCESO PERMITIDO", JOptionPane.INFORMATION_MESSAGE, usuarioimg);
-
-
-
 
         }else{
 
