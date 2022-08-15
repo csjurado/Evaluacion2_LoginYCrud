@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -7,16 +6,15 @@ import java.sql.*;
 public class JavaCrud {
     JPanel Main;
     private JTextField textNombre;
-    private JTextField textPrecio;
-    private JTextField textCiudad;
+    private JTextField textPais;
+    private JTextField textTelefono;
     private JButton createButton;
     private JButton deleteButton;
     private JButton updateButton;
     private JTextField textID;
-    private JTextField textCantidad;
+    private JTextField textCiudad;
     private JButton limpiarButton;
     private JButton buscarButton;
-    private JLabel textMensaje;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("JavaCrud");
@@ -32,12 +30,13 @@ public class JavaCrud {
             @Override
             public void actionPerformed(ActionEvent e) {
             Create();
+            Limpiar();
             }
         });
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            Limpiar();
             }
         });
         updateButton.addActionListener(new ActionListener() {
@@ -75,7 +74,7 @@ public class JavaCrud {
     Connection con;
     PreparedStatement pst;
     public void Connect(){
-        final String DB_URL="jdbc:mysql://localhost/misproductos?serverTimezone=UTC";
+        final String DB_URL="jdbc:mysql://localhost/banco?serverTimezone=UTC";
         final String USERNAME="csjurado";
         final String PASSWORD="12345";
 
@@ -94,19 +93,15 @@ public class JavaCrud {
     }
 
     public void Create(){
-        String nombre, precio,ciudad, id, cantidad;
+        String id,IDusuario, nombre,pais, telefono, ciudad;
         nombre=textNombre.getText();
-        precio=textPrecio.getText();
-        ciudad=textCiudad.getText();
-        id= textNombre.getText();
-        cantidad=textCantidad.getText();
-        System.out.println(nombre);
-        System.out.println(precio);
-        System.out.println(ciudad);
-        System.out.println(id);
-        System.out.println(cantidad);
+        pais=textPais.getText();
+        telefono=textTelefono.getText();
+        ciudad= textCiudad.getText();
+        id= textID.getText();
 
-        final String DB_URL="jdbc:mysql://localhost/misproductos?serverTimezone=UTC";
+
+        final String DB_URL="jdbc:mysql://localhost/banco?serverTimezone=UTC";
         final String USERNAME="csjurado";
         final String PASSWORD="12345";
 
@@ -114,15 +109,17 @@ public class JavaCrud {
         try{
             Connection conn= DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             Statement stmt= conn.createStatement();
-            String sql="insert into productos(pnombre, pciudad,pprecio,pcantidad)values(?,?,?,?)";
+            String sql="insert into clientes(Nombre, Pais,Telefono,Ciudad)values(?,?,?,?)";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,nombre);
-            pst.setString(2,ciudad);
-            pst.setString(3,precio);
-            pst.setString(4,cantidad);
+            pst.setString(2,pais);
+            pst.setString(3,telefono);
+            pst.setString(4,ciudad);
             //ResultSet resultSet=pst.executeQuery();
+            ImageIcon icono = new ImageIcon("src/images/user.png");
+            JOptionPane.showMessageDialog(null, "USUARIO CREADO CON EXITO  ",
+                    "AYUDA PARA INGRESAR ", JOptionPane.PLAIN_MESSAGE, icono);
             pst.executeUpdate();
-
             stmt.close();
             conn.close();
 
@@ -134,16 +131,16 @@ public class JavaCrud {
     }
     public void Limpiar(){
         textNombre.setText("");
-        textPrecio.setText("");
-        textCiudad.setText("");
+        textPais.setText("");
+        textTelefono.setText("");
         textID.setText("");
-        textCantidad.setText("");
+        textCiudad.setText("");
     }
     public void Buscar(){
         String id="0";
         id=textID.getText();
 
-        final String DB_URL="jdbc:mysql://localhost/misproductos?serverTimezone=UTC";
+        final String DB_URL="jdbc:mysql://localhost/banco?serverTimezone=UTC";
         final String USERNAME="csjurado";
         final String PASSWORD="12345";
 
@@ -151,7 +148,7 @@ public class JavaCrud {
         try{
             Connection conn= DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             Statement stmt= conn.createStatement();
-            String sql="select * from productos where pid=?";
+            String sql="select * from clientes where pid=?";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,id);
             //System.out.println(sql);
@@ -161,22 +158,25 @@ public class JavaCrud {
 
 
             if(rs.next()==true){
-                String nombre, ciudad, precio, cantidad;
+                String nombre, pais, telefono, ciudad;
                 nombre=rs.getString(2);
-                ciudad=rs.getString(3);
-                precio=rs.getString(4);
-                cantidad=rs.getString(5);
+                pais=rs.getString(3);
+                telefono=rs.getString(4);
+                ciudad=rs.getString(5);
 
                 System.out.println();
+                textID.setText(id);
                 textNombre.setText(nombre);
+                textPais.setText(pais);
+                textTelefono.setText(telefono);
                 textCiudad.setText(ciudad);
-                textPrecio.setText(precio);
-                textCantidad.setText(cantidad);
+
 
             }
             else {
-                //textMensaje.setText("no se encuentra el producto");
-                JOptionPane.showMessageDialog(null,"no se encuentra el producto");
+                ImageIcon icono = new ImageIcon("src/images/user.png");
+                JOptionPane.showMessageDialog(null, "El usuario NO SE ENCUENTRA EN LA BASE DE DATOS",
+                        "BUSCAR  ", JOptionPane.PLAIN_MESSAGE, icono);
                 Limpiar();
             }
             stmt.close();
@@ -189,16 +189,16 @@ public class JavaCrud {
         }
     }
     public void Update(){
-        String id, nombre, ciudad, precio, cantidad;
+        String id, nombre,pais, telefono, ciudad;
         id=textID.getText();
         nombre=textNombre.getText();
-        ciudad=textCiudad.getText();
-        precio=textPrecio.getText();
-        cantidad=textCantidad.getText();
+        telefono= textTelefono.getText();
+        pais= textPais.getText();
+        ciudad= textCiudad.getText();
 
 
 
-        final String DB_URL="jdbc:mysql://localhost/misproductos?serverTimezone=UTC";
+        final String DB_URL="jdbc:mysql://localhost/banco?serverTimezone=UTC";
         final String USERNAME="csjurado";
         final String PASSWORD="12345";
 
@@ -206,18 +206,21 @@ public class JavaCrud {
         try{
             Connection conn= DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             Statement stmt= conn.createStatement();
-            String sql="update productos set pnombre=?, pciudad=?,pprecio=?,pcantidad=? where pid=?";
+            String sql="update clientes set Nombre=?,Pais=?,Telefono=?,Ciudad=? where pid=?";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,nombre);
-            pst.setString(2,ciudad);
-            pst.setString(3,precio);
-            pst.setString(4,cantidad);
+            pst.setString(2,pais);
+            pst.setString(3,telefono);
+            pst.setString(4,ciudad);
             pst.setString(5,id);
             //ResultSet resultSet=pst.executeQuery();
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Registro actualizado");
+            ImageIcon icono = new ImageIcon("src/images/user.png");
+            JOptionPane.showMessageDialog(null, "REGISTRO ACTUALIZADO",
+                    "BUSCAR  ", JOptionPane.PLAIN_MESSAGE, icono);
             stmt.close();
             conn.close();
+            Limpiar();
 
         } catch(SQLException ex){
             ex.printStackTrace();
@@ -227,7 +230,7 @@ public class JavaCrud {
     }
 
     public void Delete(){
-        final String DB_URL="jdbc:mysql://localhost/misproductos?serverTimezone=UTC";
+        final String DB_URL="jdbc:mysql://localhost/banco?serverTimezone=UTC";
         final String USERNAME="csjurado";
         final String PASSWORD="12345";
         String borrarid=textID.getText();
@@ -235,7 +238,7 @@ public class JavaCrud {
         try{
             Connection conn= DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             Statement stmt= conn.createStatement();
-            String sql="delete from productos where pid=?";
+            String sql="delete from clientes where pid=?";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,borrarid);
 
